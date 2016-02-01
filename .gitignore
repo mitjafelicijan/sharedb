@@ -3,3 +3,11 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+/.vagrant/
+/dist/
+/sandbox/
+/server/persistent/persistent.db
+/server/persistent/persistent.db.bak
+/server/data/
+/utils/
+/requirements.txt

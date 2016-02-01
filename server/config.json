@@ -1,0 +1,26 @@
+{
+	"version": "0.1",
+	"host": "127.0.0.1",
+	"port": 51234,
+	"logging": false,
+	"persistent_timeout": 43200,
+	"schemas": [
+		{
+			"name": "weather",
+			"persistent": true,
+			"attributes": [
+				["name", "text"],
+				["latitude", "real"],
+				["longitude", "real"]
+			]
+		}, {
+			"name": "cities",
+			"persistent": false,
+			"attributes": [
+				["name", "text"],
+				["latitude", "real"],
+				["longitude", "real"]
+			]
+		}
+	]
+}

@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<title>ShareDB web console</title>
+
+		<style>
+
+			* { box-sizing: border-box; }
+
+			html, body {
+				font: 16px Arial;
+				padding: 0;
+				margin: 0;
+			}
+
+			input {
+				padding: 15px;
+				font-size: 150%;
+				width: 100%;
+			}
+
+			th, td {
+				border: 1px solid #333;
+				padding: 5px;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				text-align: left;
+			}
+
+			table th {
+				background: #eee;
+				border: 0;
+				padding: 10px 5px;
+			}
+
+			table tbody tr td:first-child {
+				border-left: 0;
+			}
+
+			table tbody tr td:last-child {
+				border-right: 0;
+			}
+
+			header, aside, section {
+				padding: 10px;
+			}
+
+			header {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				height: 50px;
+				background: #333;
+				color: #fff;
+				font-size: 150%;
+			}
+
+			aside {
+				position: absolute;
+				top: 50px;
+				left: 0;
+				bottom: 0;
+				width: 200px;
+				border-right: 1px solid #333;
+			}
+
+			form {
+				position: absolute;
+				top: 50px;
+				right: 0;
+				left: 200px;
+				height: 50px;
+			}
+
+			form input {
+				border: 0;
+				border-bottom: 1px solid #333;
+			}
+
+			section {
+				position: absolute;
+				top: 110px;
+				right: 0;
+				left: 200px;
+				bottom: 0;
+				overflow-y: auto;
+				padding: 0;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<header>ShareDB - network accessible wide-column datastore</header>
+		<form>
+			<p><input type="search" name="query" value="{{ query }}" placeholder="SQL query ..." onfocus="this.value = this.value;" width="100%" autofocus></p>
+		</form>
+
+		<section>
+
+			<table>
+				<thead>
+					<tr>
+						% for key in keys:
+						<th>{{ key }}</th>
+						% end
+					</tr>
+				</thead>
+				<tbody>
+					% for item in results:
+					<tr>
+						% for attr in item:
+						<td>{{ item[attr] }}</td>
+						% end
+					</tr>
+					% end
+				</tbody>
+			</table>
+
+		</section>
+
+		<aside>
+			<h4>Available schemas:</h4>
+			<ul>
+				% for item in schemas['data']:
+				<li><a href="?query=select * from {{ item['name'] }} limit 100;">{{ item['name'] }}</a></li>
+				% end
+			</ul>
+			<hr>
+			<small>
+				<div><b>Uptime:</b> {{ info['uptime'] }}</div>
+				<div><b>Version:</b> {{ info['version'] }}</div>
+				<div><b>Query took:</b><br> {{ se }}</div>
+			</small>
+		</aside>
+
+	</body>
+
+</html>
