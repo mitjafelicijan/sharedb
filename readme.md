@@ -83,6 +83,7 @@ is periodically written to disk and loaded on server start.
 
 Server configuration is located in /opt/sharedb/config.json.
 
+```
   persistent_timeout: 3600
     interval on which memory data is 
     written to disk to ensure data
@@ -97,7 +98,7 @@ Server configuration is located in /opt/sharedb/config.json.
   host: 127.0.0.1
     to enable remote connections change ip
     to 0.0.0.0
-
+```
 
 
 
@@ -109,13 +110,13 @@ https://tools.ietf.org/html/rfc7231
 
 Status used by server:
 
+```
   200 ... Ok
   400 ... Bad Request (query malformed)
+```
 
 
-
-
- Search patterns and best practices
+## Search patterns and best practices
 
 ShareDB uses in-memory style database with virtual tables so you can 
 use "match" technique for full-text.
@@ -125,17 +126,20 @@ use "match" technique for full-text.
 
 Example of "like" query:
 
+```
   select * from cities where name like 'oregon' limit 1;
   -- matches oregon word
 
   select * from cities where name like '%rego%' limit 1;
   -- matches every string with "rego" substring regardless of position
+```
 
 Example of "match" query (very fast and non cpu intensive):
 
+```
   select * from cities where name match 'oregon' limit 1;
   -- matches exctact oregon word in sentance
 
   select * from cities where name match 'oreg*' limit 1;
   -- matches prefix of "oreg" word in sentance
-
+```
