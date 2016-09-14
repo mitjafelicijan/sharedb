@@ -1,4 +1,4 @@
-# ShareDB - network accessible wide-column database
+# sqlite-xmlrpc - network accessible wide-column database
 ================================================================================
 
 
@@ -7,18 +7,18 @@
 ## Overview
 --------------------------------------------------------------------------------
 
-ShareDB is intended to be used as a network enabled caching database. SQL 
+sqlite-xmlrpc is intended to be used as a network enabled caching database. SQL 
 language supported gives user extendability necessary to perform higher 
 functions like full-text search and pattern matching.
 
-ShareDB uses XMLRPC to communicate with other processes and completely 
+sqlite-xmlrpc uses XMLRPC to communicate with other processes and completely 
 isolated from main client applications. Only couple of method are 
 available publicly to clients.
 
-With standard configuration ShareDB has disabled remote connections but 
+With standard configuration sqlite-xmlrpc has disabled remote connections but 
 this can be changed by editing config file.
 
-Because ShareDB runs completely in memory you will loose data when 
+Because sqlite-xmlrpc runs completely in memory you will loose data when 
 server is restarted. So that is why data persistence was integrated 
 into service. If schema is data persistent then every n-minutes this 
 scheme will be written/backed-up to disk. This functionality is 
@@ -30,7 +30,7 @@ configurable in config file.
 ## Installation
 --------------------------------------------------------------------------------
 
-ShareDB heavily relies on Sqlite3 so in order to install you must first
+sqlite-xmlrpc heavily relies on Sqlite3 so in order to install you must first
 install sqlite3 package from repository.
 
   $ sudo apt install sqlite3
@@ -41,7 +41,7 @@ Then download Debian package can install (currently supports only amd64).
   $ sudo dpkg -i sharedb_1.0-0.deb
 
 After installation is complete new systemd service is exposed to 
-operating system. To start ShareDB start service via systemd.
+operating system. To start sqlite-xmlrpc start service via systemd.
 
   $ sudo service sharedb start
   $ sudo service sharedb status
