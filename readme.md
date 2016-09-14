@@ -1,9 +1,7 @@
 # sqlite-xmlrpc - network accessible sql database
-================================================================================
 
 
 ## Overview
---------------------------------------------------------------------------------
 
 sqlite-xmlrpc is intended to be used as a network enabled caching database. SQL 
 language supported gives user extendability necessary to perform higher 
@@ -23,10 +21,7 @@ scheme will be written/backed-up to disk. This functionality is
 configurable in config file.
 
 
-
-
 ## Installation
---------------------------------------------------------------------------------
 
 sqlite-xmlrpc heavily relies on Sqlite3 so in order to install you must first
 install sqlite3 package from repository.
@@ -49,7 +44,6 @@ operating system. To start sqlite-xmlrpc start service via systemd.
 
 
 ## Schema definition
---------------------------------------------------------------------------------
 
 When server is started configuration file (config.json) is read and
 schemas are created based on a definition.
@@ -67,7 +61,6 @@ is periodically written to disk and loaded on server start.
 
 
 ## Available schema datatypes
---------------------------------------------------------------------------------
 
   - integer (signed integer)
   - real (floating point value)
@@ -82,7 +75,6 @@ is periodically written to disk and loaded on server start.
 
 
 ## Server configuration
---------------------------------------------------------------------------------
 
 Server configuration is located in /opt/sharedb/config.json.
 
@@ -105,7 +97,6 @@ Server configuration is located in /opt/sharedb/config.json.
 
 
 ## Response status codes
---------------------------------------------------------------------------------
 
 For every request there is a response with field status. Status
 codes are compliant on RFC 7231 standard.
@@ -120,7 +111,6 @@ Status used by server:
 
 
  Search patterns and best practices
---------------------------------------------------------------------------------
 
 ShareDB uses in-memory style database with virtual tables so you can 
 use "match" technique for full-text.
