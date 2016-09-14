@@ -1,7 +1,5 @@
-# sqlite-xmlrpc - network accessible wide-column database
+# sqlite-xmlrpc - network accessible sql database
 ================================================================================
-
-
 
 
 ## Overview
