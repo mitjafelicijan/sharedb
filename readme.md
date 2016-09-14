@@ -26,20 +26,25 @@ configurable in config file.
 sqlite-xmlrpc heavily relies on Sqlite3 so in order to install you must first
 install sqlite3 package from repository.
 
+```
   $ sudo apt install sqlite3
+```
 
 Then download Debian package can install (currently supports only amd64).
 
+```
   $ wget http://mitjafelicijan.github.io/dist/sharedb_1.0-0.deb
   $ sudo dpkg -i sharedb_1.0-0.deb
+```
 
 After installation is complete new systemd service is exposed to 
 operating system. To start sqlite-xmlrpc start service via systemd.
 
+```
   $ sudo service sharedb start
   $ sudo service sharedb status
   $ sudo service sharedb stop
-
+```
 
 
 
